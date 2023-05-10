@@ -22,8 +22,13 @@ import { SPFI } from '@pnp/sp';
 const Tcrform = (props:ITcrformProps):JSX.Element =>{
 
  const [form,setform ] = useState({
-Title:"123",FreightPayment:"",ContractFrom: new Date(),  
-endDate: new Date()
+Title:"123",FreightPayment:"",
+CargoDescription:"",
+ContractDuration:"",
+OtherConditions:"",
+ApplicableLaw:"",
+
+ContractFrom: new Date()
  })
  
   const _getPeoplePickerItems = (items: any[]) => {
@@ -99,29 +104,30 @@ function onsubmit(){
 <DateTimePicker label="From"
                 dateConvention={DateConvention.Date}
                
+               
                 />
                 
                 
 <DateTimePicker label="To"
                 dateConvention={DateConvention.Date}/>
                 
-<TextField label="Contract Duration"/>               
+<TextField label="Contract Duration" onChange={(e)=>setform({...form,ContractDuration:(e.target as HTMLInputElement).value})}/>               
 
-<RichText label="Cargo Description"/>
+<RichText label="Cargo Description" />
 <TextField label="Contract Volume Per Year"/> 
 <RichText label="Port Pairs, Estimate Volume & Freight Rate"/>
 <TextField label="BAF"/> 
 
 <TextField label="Freight Payment" onChange={(e)=>setform({...form,FreightPayment:(e.target as HTMLInputElement).value})}/>
-<TextField label="Other Conditions"/> 
-<TextField label="Applicable Law"/> 
+<TextField label="Other Conditions" onChange={(e)=>setform({...form,OtherConditions:(e.target as HTMLInputElement).value})}/> 
+<TextField label="Applicable Law" onChange={(e)=>setform({...form,ApplicableLaw:(e.target as HTMLInputElement).value})}/> 
 <RichText label="Background"/>
 <ListItemAttachments listId='eff8bd33-0005-47f4-a438-7579491074d2'
                      itemId={1}
                      label = "Background"
                      context={props.context as any}
                      disabled={false} />
-<RichText label="Voyage P/L Contribution"/> 
+<RichText label="Voyage P/L Contribution" /> 
 <ListItemAttachments listId='eff8bd33-0005-47f4-a438-7579491074d2'
                      itemId={1}
                      label = "Voyage P/L Contribution"
