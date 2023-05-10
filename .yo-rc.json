@@ -1,0 +1,21 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "plusBeta": false,
+    "isCreatingSolution": true,
+    "nodeVersion": "16.19.1",
+    "sdksVersions": {
+      "@microsoft/microsoft-graph-client": "3.0.2",
+      "@microsoft/teams-js": "2.4.1"
+    },
+    "version": "1.16.1",
+    "libraryName": "tcr",
+    "libraryId": "e63a7c8f-8edd-4bd4-a26e-42f5000d4717",
+    "environment": "spo",
+    "packageManager": "npm",
+    "solutionName": "tcr",
+    "solutionShortDescription": "tcr description",
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "componentType": "webpart"
+  }
+}
